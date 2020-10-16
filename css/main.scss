@@ -1,0 +1,175 @@
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: Helvetica;
+}
+
+canvas {
+    display: block;
+}
+
+button {
+    position: absolute;
+    bottom: 2em;
+    left: 2em;
+    font-family: Helvetica;
+    font-size: 3em;
+    text-transform: uppercase;
+    width: auto;
+    line-height: .8em;
+    border: 5px solid white;
+    padding: .2em;
+    background-color: transparent;
+    color: white;
+}
+
+.container-fluid {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}
+
+.start {
+    padding-top: 300px;
+}
+
+#lvl {
+    position: absolute;
+    bottom: 0.7em;
+    left: 0.7em;
+    border: 5px solid black;
+    padding: .2em;
+}
+
+.overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: block; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100; /* Specify a stack order in case you're using a different order for other elements */
+  }
+
+#overlay1 {
+  display: block; 
+  left: 50%;
+  top: 90%;
+  transform: translate(-50%, -50%) rotateX(70deg);
+}
+
+#overlay2 {
+  display: none; 
+}
+
+#lives {
+  display: none;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 20px;
+}
+
+#lives * {
+  padding: 1px;
+}
+
+#gameCompleted {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rippleContainer {
+  position: fixed;
+  width: 100vw;
+}
+
+.ripple {
+  position: absolute;
+  top: 0;
+  transform: translate(-50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  animation: ripple 2s 1;
+  animation-timing-function: cubic-bezier(0,0,.58,1);
+  animation-fill-mode: forwards;
+}
+
+.r2 {
+  animation-delay: 0.1s;
+}
+
+
+@keyframes ripple {
+  from {
+    border: 4px solid #ffffff;
+    background: #585858;
+    opacity: 0.35;
+  }
+  to {
+    border: 0px solid #ffffff;
+    background: #585858;
+    width: 200px;
+    height: 200px;
+    top: 20px;
+    opacity: 0;
+  }
+}
+
+.drum {
+  position: absolute;
+  top: 30%;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: black;
+  background: radial-gradient(circle at 100px 100px, #073b4c, #000);
+}
+
+#drum1 {
+  left: -15%;
+}
+
+#drum2 {
+  right: -15%;
+}
+
+.musicNote {
+  // position: absolute;
+  // display: block;
+  color: black;
+  position: absolute;
+  left:10%;
+  top:10%;
+  width: 20px;
+  height: 20px;
+  animation: musicNoteLeftAnim 1s 1;
+  animation-timing-function: cubic-bezier(0,0,.58,1);
+  animation-fill-mode: forwards;
+
+}
+
+@keyframes musicNoteLeftAnim {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(-60px, -40px) rotate(-30deg);
+    opacity: 0;
+  }
+}
+
+
+@keyframes musicNoteRightAnim {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(60px, -40px) rotate(30deg);
+    opacity: 0;
+  }
+}
+
